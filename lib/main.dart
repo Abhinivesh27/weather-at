@@ -1,9 +1,8 @@
-import 'package:bloc_learn/counter/home.dart';
-import 'package:bloc_learn/todo/bloc/todo_bloc.dart';
-import 'package:bloc_learn/todo/bloc/todo_event.dart';
-import 'package:bloc_learn/todo/view/todo_list.dart';
+import 'package:bloc_learn/weather/bloc/weather_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'weather/ui/view.dart';
 
 void main() => runApp(const MyApp());
 
@@ -13,8 +12,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => TodoBloc()..add(LoadTodoEvent()),
-      child: MaterialApp(title: 'Material App', home: TodoListPage()),
+      create: (context) => WeatherBloc(),
+      child: MaterialApp(title: 'Material App', home: WeatherApp()),
     );
   }
 }
